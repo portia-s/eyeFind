@@ -103,9 +103,19 @@
                             <constraint firstItem="GdB-DV-0oi" firstAttribute="bottom" secondItem="Z1M-99-AMW" secondAttribute="top" id="zh3-aj-GT0"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="BbE-4v-NTJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="xF6-kD-Ufl">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="crP-gh-P3t" id="Mip-gH-ylH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="detailScrollView" destination="GdB-DV-0oi" id="QD6-c1-iiK"/>
                         <outlet property="fullImageView" destination="80Y-nZ-TZ8" id="COj-wl-2IA"/>
+                        <outlet property="shareButton" destination="xF6-kD-Ufl" id="rI2-xJ-nUB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFp-jc-5Jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
