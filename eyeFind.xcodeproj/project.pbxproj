@@ -13,9 +13,14 @@
 		2D1E95921DAF657B00266978 /* eyeFind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E95901DAF657B00266978 /* eyeFind.xcdatamodeld */; };
 		2D1E95941DAF657B00266978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D1E95931DAF657B00266978 /* Assets.xcassets */; };
 		2D1E95971DAF657B00266978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D1E95951DAF657B00266978 /* LaunchScreen.storyboard */; };
+		2DCFD2461DB0150200BA44F0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFD2451DB0150200BA44F0 /* Model.swift */; };
+		2DCFD2481DB01CB800BA44F0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFD2471DB01CB800BA44F0 /* ImageCollectionViewCell.swift */; };
+		2DCFD24A1DB19A8B00BA44F0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFD2491DB19A8B00BA44F0 /* DetailViewController.swift */; };
+		7A17BA52E1774A5F28C7D3D3 /* Pods_eyeFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4365C99EC6523C7BAB59ADB3 /* Pods_eyeFind.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		055ADC83BC7B594342FD89FB /* Pods-eyeFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eyeFind.release.xcconfig"; path = "Pods/Target Support Files/Pods-eyeFind/Pods-eyeFind.release.xcconfig"; sourceTree = "<group>"; };
 		2D1E95861DAF657B00266978 /* eyeFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eyeFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D1E95891DAF657B00266978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D1E958B1DAF657B00266978 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +29,11 @@
 		2D1E95931DAF657B00266978 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D1E95961DAF657B00266978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D1E95981DAF657B00266978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DCFD2451DB0150200BA44F0 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		2DCFD2471DB01CB800BA44F0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		2DCFD2491DB19A8B00BA44F0 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4365C99EC6523C7BAB59ADB3 /* Pods_eyeFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eyeFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84AD87AA5F0C9CECFC53E378 /* Pods-eyeFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eyeFind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eyeFind/Pods-eyeFind.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A17BA52E1774A5F28C7D3D3 /* Pods_eyeFind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,8 @@
 			children = (
 				2D1E95881DAF657B00266978 /* eyeFind */,
 				2D1E95871DAF657B00266978 /* Products */,
+				F6AA7CE351BFE6523BF92621 /* Pods */,
+				FEA76EA8ACE39C85A690B378 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,7 +70,10 @@
 			isa = PBXGroup;
 			children = (
 				2D1E95891DAF657B00266978 /* AppDelegate.swift */,
+				2DCFD2451DB0150200BA44F0 /* Model.swift */,
 				2D1E958B1DAF657B00266978 /* ViewController.swift */,
+				2DCFD2471DB01CB800BA44F0 /* ImageCollectionViewCell.swift */,
+				2DCFD2491DB19A8B00BA44F0 /* DetailViewController.swift */,
 				2D1E958D1DAF657B00266978 /* Main.storyboard */,
 				2D1E95931DAF657B00266978 /* Assets.xcassets */,
 				2D1E95951DAF657B00266978 /* LaunchScreen.storyboard */,
@@ -67,6 +83,23 @@
 			path = eyeFind;
 			sourceTree = "<group>";
 		};
+		F6AA7CE351BFE6523BF92621 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84AD87AA5F0C9CECFC53E378 /* Pods-eyeFind.debug.xcconfig */,
+				055ADC83BC7B594342FD89FB /* Pods-eyeFind.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FEA76EA8ACE39C85A690B378 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4365C99EC6523C7BAB59ADB3 /* Pods_eyeFind.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D1E959B1DAF657B00266978 /* Build configuration list for PBXNativeTarget "eyeFind" */;
 			buildPhases = (
+				8A324B371066C5D8DAADB491 /* [CP] Check Pods Manifest.lock */,
 				2D1E95821DAF657B00266978 /* Sources */,
 				2D1E95831DAF657B00266978 /* Frameworks */,
 				2D1E95841DAF657B00266978 /* Resources */,
+				9CA314EC29D7F05B6DA7B982 /* [CP] Embed Pods Frameworks */,
+				484434D470D254856B92C1A3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +171,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		484434D470D254856B92C1A3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eyeFind/Pods-eyeFind-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A324B371066C5D8DAADB491 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9CA314EC29D7F05B6DA7B982 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eyeFind/Pods-eyeFind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2D1E95821DAF657B00266978 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -142,7 +226,10 @@
 			files = (
 				2D1E95921DAF657B00266978 /* eyeFind.xcdatamodeld in Sources */,
 				2D1E958C1DAF657B00266978 /* ViewController.swift in Sources */,
+				2DCFD2481DB01CB800BA44F0 /* ImageCollectionViewCell.swift in Sources */,
+				2DCFD24A1DB19A8B00BA44F0 /* DetailViewController.swift in Sources */,
 				2D1E958A1DAF657B00266978 /* AppDelegate.swift in Sources */,
+				2DCFD2461DB0150200BA44F0 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +350,7 @@
 		};
 		2D1E959C1DAF657B00266978 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84AD87AA5F0C9CECFC53E378 /* Pods-eyeFind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B2278J6LL2;
@@ -276,6 +364,7 @@
 		};
 		2D1E959D1DAF657B00266978 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 055ADC83BC7B594342FD89FB /* Pods-eyeFind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B2278J6LL2;
@@ -306,6 +395,7 @@
 				2D1E959D1DAF657B00266978 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
