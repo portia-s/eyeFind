@@ -17,15 +17,21 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     var selectedImageUrl = NSURL()
     
+    //setup scrollView parameters
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         detailScrollView.delegate = self
         detailScrollView.maximumZoomScale = 5.0
         detailScrollView.minimumZoomScale = 1.0
+        self.automaticallyAdjustsScrollViewInsets = false
+        detailScrollView.contentInset = UIEdgeInsets.zero
+        detailScrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+        detailScrollView.contentOffset = CGPoint(x: 0, y: 0)
     }
     
-    override func viewDidLayoutSubviews() {
+    //bring Image from URL
+    override func viewDidAppear(_ animated: Bool) {
         fullImageView.bringImageFromUrl(url: selectedImageUrl)
     }
     
@@ -34,20 +40,17 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //set view for scroll
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.fullImageView
     }
 
+    //share image functionality
     @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
-        
         let activityViewController = UIActivityViewController(activityItems: [fullImageView.image! as UIImage], applicationActivities: nil)
-        activityViewController.excludedActivityTypes = [.copyToPasteboard]
-//            activityItems: ["Check out this beer I liked using Beer Tracker.", url],
-//            applicationActivities: nil)
         if let popoverPresentationController = activityViewController.popoverPresentationController {
-            popoverPresentationController.barButtonItem = (sender as! UIBarButtonItem)
+            popoverPresentationController.barButtonItem = (sender)
         }
         present(activityViewController, animated: true, completion: nil)
-    
     }
 }

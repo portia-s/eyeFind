@@ -81,15 +81,14 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GdB-DV-0oi">
                                 <subviews>
-                                    <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="80Y-nZ-TZ8">
-                                        <rect key="frame" x="8" y="-56" width="359" height="587"/>
-                                    </imageView>
+                                    <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="80Y-nZ-TZ8"/>
                                 </subviews>
+                                <color key="backgroundColor" red="0.61187009162303663" green="0.61187009162303663" blue="0.61187009162303663" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="80Y-nZ-TZ8" firstAttribute="centerY" secondItem="GdB-DV-0oi" secondAttribute="centerY" id="1aV-uO-TKR"/>
-                                    <constraint firstItem="80Y-nZ-TZ8" firstAttribute="bottom" secondItem="GdB-DV-0oi" secondAttribute="bottomMargin" id="6eF-b9-J9P"/>
+                                    <constraint firstItem="80Y-nZ-TZ8" firstAttribute="bottom" secondItem="GdB-DV-0oi" secondAttribute="bottomMargin" constant="8" id="6eF-b9-J9P"/>
                                     <constraint firstItem="80Y-nZ-TZ8" firstAttribute="centerX" secondItem="GdB-DV-0oi" secondAttribute="centerX" id="8Sk-Ar-ZsA"/>
-                                    <constraint firstItem="80Y-nZ-TZ8" firstAttribute="top" secondItem="GdB-DV-0oi" secondAttribute="topMargin" id="9FC-gJ-chn"/>
+                                    <constraint firstItem="80Y-nZ-TZ8" firstAttribute="top" secondItem="GdB-DV-0oi" secondAttribute="topMargin" constant="-8" id="9FC-gJ-chn"/>
                                     <constraint firstItem="80Y-nZ-TZ8" firstAttribute="trailing" secondItem="GdB-DV-0oi" secondAttribute="trailingMargin" id="RWU-By-Zgc"/>
                                     <constraint firstItem="80Y-nZ-TZ8" firstAttribute="leading" secondItem="GdB-DV-0oi" secondAttribute="leadingMargin" id="njk-Xm-TFl"/>
                                 </constraints>
@@ -100,7 +99,7 @@
                             <constraint firstAttribute="trailing" secondItem="GdB-DV-0oi" secondAttribute="trailing" id="BZm-QU-WLz"/>
                             <constraint firstItem="GdB-DV-0oi" firstAttribute="top" secondItem="YaZ-me-zBQ" secondAttribute="bottom" id="H4s-XA-5uj"/>
                             <constraint firstItem="GdB-DV-0oi" firstAttribute="leading" secondItem="hOo-09-Rhl" secondAttribute="leading" id="a7R-lK-DPg"/>
-                            <constraint firstItem="GdB-DV-0oi" firstAttribute="bottom" secondItem="Z1M-99-AMW" secondAttribute="top" id="zh3-aj-GT0"/>
+                            <constraint firstItem="GdB-DV-0oi" firstAttribute="bottom" secondItem="Z1M-99-AMW" secondAttribute="top" constant="40" id="zh3-aj-GT0"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

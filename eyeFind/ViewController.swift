@@ -13,26 +13,36 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
-    
-    let sectionInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     var searchController: UISearchController!
+    
+    //sets border around collectionView
+    let sectionInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+
+    //passed onto DetailVC for full image
     var selectedIndex = Int()
+    
+    //instance to access model for URLSessin & JSON Parsing
     var vcModel = PhotoSearchModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Initializing with searchResultsController set to nil means that
-        // searchController will use this view controller to display the search results
+
+        // searchController to use this view controller to display the search results
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
+        //
         searchController.dimsBackgroundDuringPresentation = false
+        //
         searchController.searchBar.sizeToFit()
         searchController.searchBar.placeholder = "Image Search"
+        //create searchBar in NavBar
         self.navigationItem.titleView = searchController.searchBar
+        //
         searchController.hidesNavigationBarDuringPresentation = false
         // Sets this view controller as presenting view controller for the search interface
         definesPresentationContext = true
         
+        //Recustomize* cursor in searchBar textField from white to gray
         let view: UIView = self.searchController.searchBar.subviews[0]
         let subViewsArray = view.subviews
         
@@ -42,10 +52,10 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
             }
         }
         
-        //setting collectionView datasource and delegate
+        //setting self collectionView's datasource and delegate
         imageCollectionView.dataSource = self
         imageCollectionView.delegate = self
-        
+        //seeting self to be model's delegate
         vcModel.delegate = self
     }
     
@@ -54,6 +64,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         // Dispose of any resources that can be recreated.
     }
     
+    //initialize url arrays & initiate photo search
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchText = searchController.searchBar.text {
             if !searchText.isEmpty {
@@ -64,20 +75,29 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         }
     }
     
+     // MARK: UICollectionViewDatasource & UICollectionViewDelegate
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return vcModel.imageUrls.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cvCell", for: indexPath) as! ImageCollectionViewCell
-        myCell.cellImageView.bringImageFromUrl(url: NSURL(string: vcModel.imageUrls[indexPath.row])) //setImageWith(URL(string: (imageURLs[indexPath.row]))!)
-        print("IndexPath : ", indexPath.row)
+        myCell.cellImageView.bringImageFromUrl(url: NSURL(string: vcModel.imageUrls[indexPath.row]))
+        //print("IndexPath : ", indexPath.row)
+        //reFetch next set of urls as collectionView usesup* current set of images
         if vcModel.imageUrls.count - 1 <= indexPath.row {
             vcModel.bingImageSearchAPI(searchString: searchController.searchBar.text!, offset: vcModel.imageUrls.count)
-            print("Offset :", vcModel.imageUrls.count)
+            //print("Offset :", vcModel.imageUrls.count)
         }
         return myCell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        performSegue(withIdentifier: "toDetailView", sender: self)
+    }
+    
     
     // MARK: UICollectionViewDelegateFlowLayout methods
     
@@ -97,11 +117,8 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         return CGSize(width: dimensions, height: dimensions)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedIndex = indexPath.row
-        performSegue(withIdentifier: "toDetailView", sender: self)
-        
-    }
+    
+    // MARK: Helper methods
     
     func updateCollectionView() {
         DispatchQueue.main.async(execute: {
@@ -109,6 +126,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         })
     }
     
+    //pass selected full image url to detailVC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailView" {
             let nextVC = segue.destination as! DetailViewController
@@ -118,23 +136,28 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     
 }
 
+    // MARK: Extension
+
 extension UIImageView {
     
+    //add&manage activity indicator; fetch image for given url
     func bringImageFromUrl(url: NSURL?) {
-        
+
+        //setup activity indicator
         let activityIndicatorView = UIActivityIndicatorView()
-        activityIndicatorView.frame.size.width = 30
-        activityIndicatorView.frame.size.height = 30
+        activityIndicatorView.frame.size.width = 50
+        activityIndicatorView.frame.size.height = 50
         activityIndicatorView.center = self.center
-        print("boundsImageView : ", self.center )
         activityIndicatorView.isHidden = false
-        activityIndicatorView.color = UIColor.lightGray
+        activityIndicatorView.color = UIColor.darkGray
         
         addSubview(activityIndicatorView)
         bringSubview(toFront: activityIndicatorView)
         
+        //start animating
         activityIndicatorView.startAnimating()
         
+        //fetch image, stop animation & remove indicator
         setImageWith(NSURLRequest(url: url as! URL) as URLRequest, placeholderImage: nil, success: { request, response, image in
             
             self.image = image
@@ -143,10 +166,10 @@ extension UIImageView {
             activityIndicatorView.removeFromSuperview()
             
             }, failure: { request, response, error in
-                self.image = UIImage(named: "notfound.png")
-                activityIndicatorView.isHidden = true
-                activityIndicatorView.stopAnimating()
-                activityIndicatorView.removeFromSuperview()
+                //self.image = UIImage(named: "notfound.png")
+                //activityIndicatorView.isHidden = true
+                //activityIndicatorView.stopAnimating()
+                //activityIndicatorView.removeFromSuperview()
         })
     }
 }
