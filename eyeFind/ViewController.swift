@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AFNetworking
+//import AFNetworking
 
 class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UISearchBarDelegate, PhotoSearchDelegate {
     
@@ -55,24 +55,13 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         //setting self collectionView's datasource and delegate
         imageCollectionView.dataSource = self
         imageCollectionView.delegate = self
-        //seeting self to be model's delegate
+        //setting self to be model's delegate
         vcModel.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    //initialize url arrays & initiate photo search
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let searchText = searchController.searchBar.text {
-            if !searchText.isEmpty {
-                vcModel.imageUrls = [String]()
-                vcModel.fullImageUrls = [String]()
-                vcModel.bingImageSearchAPI(searchString: searchText, offset: vcModel.imageUrls.count)
-            }
-        }
     }
     
      // MARK: UICollectionViewDatasource & UICollectionViewDelegate
@@ -120,6 +109,17 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     
     // MARK: Helper methods
     
+    //initialize url arrays & initiate photo search
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchText = searchController.searchBar.text {
+            if !searchText.isEmpty {
+                vcModel.imageUrls = [String]()
+                vcModel.fullImageUrls = [String]()
+                vcModel.bingImageSearchAPI(searchString: searchText, offset: vcModel.imageUrls.count)
+            }
+        }
+    }
+
     func updateCollectionView() {
         DispatchQueue.main.async(execute: {
             self.imageCollectionView.reloadData()
@@ -136,40 +136,3 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     
 }
 
-    // MARK: Extension
-
-extension UIImageView {
-    
-    //add&manage activity indicator; fetch image for given url
-    func bringImageFromUrl(url: NSURL?) {
-
-        //setup activity indicator
-        let activityIndicatorView = UIActivityIndicatorView()
-        activityIndicatorView.frame.size.width = 50
-        activityIndicatorView.frame.size.height = 50
-        activityIndicatorView.center = self.center
-        activityIndicatorView.isHidden = false
-        activityIndicatorView.color = UIColor.darkGray
-        
-        addSubview(activityIndicatorView)
-        bringSubview(toFront: activityIndicatorView)
-        
-        //start animating
-        activityIndicatorView.startAnimating()
-        
-        //fetch image, stop animation & remove indicator
-        setImageWith(NSURLRequest(url: url as! URL) as URLRequest, placeholderImage: nil, success: { request, response, image in
-            
-            self.image = image
-            activityIndicatorView.isHidden = true
-            activityIndicatorView.stopAnimating()
-            activityIndicatorView.removeFromSuperview()
-            
-            }, failure: { request, response, error in
-                //self.image = UIImage(named: "notfound.png")
-                //activityIndicatorView.isHidden = true
-                //activityIndicatorView.stopAnimating()
-                //activityIndicatorView.removeFromSuperview()
-        })
-    }
-}

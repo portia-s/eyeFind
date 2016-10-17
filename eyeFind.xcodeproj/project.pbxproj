@@ -16,6 +16,7 @@
 		2DCFD2461DB0150200BA44F0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFD2451DB0150200BA44F0 /* Model.swift */; };
 		2DCFD2481DB01CB800BA44F0 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFD2471DB01CB800BA44F0 /* ImageCollectionViewCell.swift */; };
 		2DCFD24A1DB19A8B00BA44F0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFD2491DB19A8B00BA44F0 /* DetailViewController.swift */; };
+		2DCFD24C1DB4413800BA44F0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFD24B1DB4413800BA44F0 /* ViewModel.swift */; };
 		7A17BA52E1774A5F28C7D3D3 /* Pods_eyeFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4365C99EC6523C7BAB59ADB3 /* Pods_eyeFind.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		2DCFD2451DB0150200BA44F0 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		2DCFD2471DB01CB800BA44F0 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		2DCFD2491DB19A8B00BA44F0 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2DCFD24B1DB4413800BA44F0 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4365C99EC6523C7BAB59ADB3 /* Pods_eyeFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eyeFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AD87AA5F0C9CECFC53E378 /* Pods-eyeFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eyeFind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eyeFind/Pods-eyeFind.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +73,7 @@
 			children = (
 				2D1E95891DAF657B00266978 /* AppDelegate.swift */,
 				2DCFD2451DB0150200BA44F0 /* Model.swift */,
+				2DCFD24B1DB4413800BA44F0 /* ViewModel.swift */,
 				2D1E958B1DAF657B00266978 /* ViewController.swift */,
 				2DCFD2471DB01CB800BA44F0 /* ImageCollectionViewCell.swift */,
 				2DCFD2491DB19A8B00BA44F0 /* DetailViewController.swift */,
@@ -230,6 +233,7 @@
 				2DCFD24A1DB19A8B00BA44F0 /* DetailViewController.swift in Sources */,
 				2D1E958A1DAF657B00266978 /* AppDelegate.swift in Sources */,
 				2DCFD2461DB0150200BA44F0 /* Model.swift in Sources */,
+				2DCFD24C1DB4413800BA44F0 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

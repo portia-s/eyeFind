@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AFNetworking
+//import AFNetworking
 
 class DetailViewController: UIViewController, UIScrollViewDelegate {
 
